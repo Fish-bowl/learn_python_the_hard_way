@@ -1,5 +1,20 @@
 from sys import exit 
 
+
+def create_char():
+  print("what is your name?")
+  name = input("> ")
+  print("What is your gender?")
+  print("M or F?")
+  gender = input("> ")
+  print("and your age is?")
+  age = input("> ")
+  print(f"so your name is {name}, your're a {gender}, and your {age} yesrs old.")
+  print("what style fighter are you"?)
+  print("Mage, Knight, Monk, or Ranger")
+  style = input("> ")
+  char = [name, gender, age, style,]
+
 def gold_room():
   print("This room is full of gold. How much do you take?")
 
@@ -50,7 +65,7 @@ def cthulu_room():
   choice = input("> ")
 
   if 'flee' in choice:
-    start()
+    game()
   elif 'head' in choice:
     dead("well that was tasty")
   else: 
@@ -60,7 +75,7 @@ def dead(why):
   print(why, "good job!")
   exit(0)
 
-def start():
+def game():
   print("You are in a dark room.")
   print("There is a door to your right and left.")
   print("Which do you take?")
@@ -73,4 +88,15 @@ def start():
   else:
     dead("You stuble around the room until you starve")
 
-start()
+def intro():
+  print("welcome to my game!")
+  print("1. to play")
+  print('2. to exit')
+  choice = int(input("> "))
+  if choice == 1:
+    game()
+  elif choice == 2:
+    exit(0)
+
+
+intro()
